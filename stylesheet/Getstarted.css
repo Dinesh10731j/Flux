@@ -1,0 +1,60 @@
+.getstarted{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.getstarted .blogtitle input {
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+}
+
+.getstarted .blogcategory select{
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+
+}
+
+.getstarted .writeblog textarea{
+    resize: none;
+    width:200px;
+    height:200px;
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+}
+
+
+.getstarted .authorname input{
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+
+}
+
+.getstarted .submit-btn input{
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 12px;
+}
