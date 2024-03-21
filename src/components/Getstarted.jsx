@@ -12,7 +12,7 @@ const Getstarted = () => {
 
     const handleBlog = async ()=>{
         try{
-           const response =  await axios.post("http://localhost:4040/getstarted",blog);
+           const response =  await axios.post("https://fluxs.onrender.com/getstarted",blog);
            console.log(response);
                   navigate("/blog");
         }catch(err){

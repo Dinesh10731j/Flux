@@ -5,7 +5,7 @@ import "../../stylesheet/Blog.css";
 const Blog = () => {
   const [blog,setBlog] = useState([]);
   const getUserBlog = async ()=>{
-    const response = await axios.get("http://localhost:4040/blog");
+    const response = await axios.get("https://fluxs.onrender.com/blog");
     console.log(response.data);
    setBlog(response.data.data);
   }
