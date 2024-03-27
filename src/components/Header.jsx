@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import "../../stylesheet/Header.css";
 import { Link } from 'react-router-dom';
-import Menu from "../assets/menu.png"
-const Header = () => {
+import Menu from "../assets/menu.png";
+import Moon from "../assets/moon.png";
+import Sun from "../assets/sunny.png"
+const Header = ({handleTheme,theme}) => {
   const [isOpen,setOpen] = useState(true)
 
   const handleMenu = ()=>{
-    setOpen(!isOpen)
+    setOpen(!isOpen);
   }
   return (
     <>
@@ -27,10 +29,10 @@ const Header = () => {
         {
           isOpen? <nav>
             <ul>
-            <Link className='link' to="/">Home</Link>
-              <Link className='link' to="/features">Features</Link>
-              <Link className='link' to="/aboutus">About us</Link>
-              <Link className='link' to="/blog">Blog</Link>
+            <Link  className= {theme?"whiteColor":"blackColor"} to="/">Home</Link>
+              <Link  className= {theme?"whiteColor":"blackColor"} to="/features">Features</Link>
+              <Link  className= {theme?"whiteColor":"blackColor"} to="/aboutus">About us</Link>
+              <Link  className= {theme?"whiteColor":"blackColor"} to="/blog">Blog</Link>
           
 
             </ul>
@@ -44,6 +46,9 @@ const Header = () => {
         <section className='signupBtn'>
         <Link to="/getstarted"><button>Get Started</button></Link>
 
+        </section>
+        <section className='theme_changer'>
+          <img src={theme?Sun:Moon} alt='theme_img' onClick={()=>handleTheme()}/>
         </section>
         <section className='menu_icon'>
           <img src={Menu} alt='menubar' onClick={handleMenu}/>

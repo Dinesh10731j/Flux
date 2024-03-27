@@ -7,7 +7,7 @@ h1,h4{
     display: flex;
     flex-direction:row;
     justify-content:space-evenly;
-    gap:20px
+    gap:10px
 }
 
 .office img{
@@ -39,7 +39,7 @@ text-align: justify;
 }
 
 .inbox h1{
-   font-size:1.1em;
+   font-size:1em;
 }
 .inbox button{
     padding:5px 9px;
@@ -87,7 +87,7 @@ text-align: justify;
         flex-direction:column;
         justify-content:space-evenly;
         align-items: center;
-        gap:20px
+        gap:20px;
     }
     
     .office img{
@@ -110,14 +110,12 @@ text-align: justify;
     .inbox{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height:300px;
         width:300px;
         background-color: #535c68;
         border-radius: 20px;
         padding:5px 5px;
-        margin-left:70px;
+        margin-left:20px;
     }
     
     .inbox h1{

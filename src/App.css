@@ -1,4 +1,19 @@
-body{
-  background:linear-gradient(to top,#2f3640,#2c3e50);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.darkmode{
+  background-color:#2d3436;
+  color: white;
+  height:auto;
+  width: 100%;
 }
 
+
+.lightmode{
+  background-color: #ecf0f1;
+  color: black;
+  height:auto;
+  width: 100%;
+}
