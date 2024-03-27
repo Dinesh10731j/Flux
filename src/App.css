@@ -8,6 +8,7 @@
   color: white;
   height:auto;
   width: 100%;
+  transition: all 0.4s;
 }
 
 
@@ -16,4 +17,5 @@
   color: black;
   height:auto;
   width: 100%;
+  transition: all 0.4s;
 }
