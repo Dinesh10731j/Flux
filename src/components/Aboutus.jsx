@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../stylesheet/Aboutus.css";
-import Footer from "./Footer";
-
+import office from "../assets/office.png";
+import mission from "../assets/mission.jpg";
+import axios from "axios";
+import {ToastContainer,toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
 function Aboutus() {
+  const navigate = useNavigate();
+  const [subscribe,setSubscribe] = useState({useremail:""});
+
+const SubscribeBlog = async ()=>{
+  try{
+    const response = await axios.post("https://fluxs.onrender.com/subscribe",subscribe);
+    if(!response){
+     toast.error(response.data.msg);
+    }else{
+toast.success(response.data.msg);
+setTimeout(() => {
+  navigate("/");
+}, 1000);
+    }
+  }catch(err){
+    toast.error("User already exists");
+  }
+ 
+}
+
+
+const handleChange = (e)=>{
+  const {name,value} = e.target;
+  setSubscribe((prevoiusval)=>({
+    ...prevoiusval,[name]:value
+  }))
+
+}
+
+const handleSubmit = (e)=>{
+  e.preventDefault();
+  SubscribeBlog();
+
+}
+
   return (
+    <>
     <div className="aboutus">
-    <h1>Flux</h1>
+    <ToastContainer/>
+    <div className="flux_intro">
+    <div className="about_flux">
+    <h1>About Flux</h1>
      <p>
      "About Flux: Pioneering Blogging Excellence Since 2003" At Flux, we're not
       just a blogging platform – we're a legacy of digital innovation, shaping
@@ -24,16 +67,50 @@ function Aboutus() {
       enables bloggers to thrive in an ever-evolving digital landscape. But Flux
       is more than just a blogging platform – we're a community of creators,
       thinkers, and storytellers united by our shared passion for meaningful
-      content. With an unwavering commitment to innovation and excellence, we're
-      dedicated to empowering our users to shape the future of online discourse,
-      one blog post at a time. Join Flux today and be part of a vibrant
-      community that's redefining the art of blogging for generations to come.
-      Welcome to Flux – where every voice matters, and every story shines
-      bright.
+      content.
      </p> 
 
-     <Footer/>
+
+
     </div>
+
+<div className="office_img">
+  <img src={office} alt="offic_image"/>
+</div>
+
+   
+
+    </div>
+    
+   
+
+
+<div className="mission">
+ <div className="mission_image">
+  <img src={mission} alt="mission_image"/>
+ </div>
+
+ <div className="our_mission">
+  <h1>Our Mission</h1>
+  <p>
+  At Flux, we empower curiosity and creativity through insightful content that sparks inspiration, fosters
+   learning, and cultivates meaningful connections. Our mission is to provide a dynamic platform where diverse 
+   voices converge to explore ideas, share experiences, and engage in thought-provoking conversations. With a focus on quality, 
+  innovation, and inclusivity, we strive to enrich lives and inspire positive change one blog post at a time.
+  </p>
+ </div>
+</div>
+<div className="subscribe">
+<h1>Subscribe</h1>
+ <form onSubmit={handleSubmit}>
+  <input type="email" placeholder="Enter e-mail" required  onChange={handleChange} name="useremail" value={subscribe.useremail}/>
+  <input type="submit" value="Subscribe"/>
+</form>
+</div>
+
+ </div>
+</>
+
   );
 }
 

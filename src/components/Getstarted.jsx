@@ -25,7 +25,7 @@ const Getstarted = () => {
          }
 
         }catch(err){
-            console.log('Eror while blog post',err)
+            toast.error('Eror while blog post',err)
         }
      
 

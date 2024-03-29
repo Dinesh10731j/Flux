@@ -1,3 +1,142 @@
-p{
-    font-size: 1.1em;
+.aboutus{
+    display: flex;
+    flex-direction:column;
+    padding:6px 10px;
+    width:100%;
+    gap:40px;
 }
+
+
+.aboutus .flux_intro{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+
+.aboutus .flux_intro .about_flux{
+    height: 500px;
+    width:700px;
+    text-align: justify;
+}
+
+.aboutus .flux_intro .office_img img{
+    height:400px;
+    width:400px
+}
+
+
+.aboutus .mission{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.aboutus .mission .mission_image img{
+    height:300px;
+    width:300px;
+
+}
+
+
+.aboutus .our_mission{
+    height:200px;
+    width:500px;
+    text-align: justify;
+}
+
+.subscribe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.subscribe form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:12px;
+}
+
+
+.subscribe form input[type="submit"]{
+    padding:5px 9px;
+    outline: none;
+    border: none;
+    background-color: #3498db;
+    border-radius:7px;
+    font-size:1em;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    box-shadow: 12px 0px 12px rgba(0, 0, 0, 0.50);
+
+}
+
+
+.subscribe form input{
+    padding:7px 18px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: 1em;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.50);
+
+}
+
+
+
+
+
+
+ /* For mobile device */
+@media (max-width: 576px) {
+    .aboutus{
+        display: flex;
+        flex-direction:column;
+        padding:6px 10px;
+        width:100%;
+        gap:50px;
+    }
+    
+    
+    .aboutus .flux_intro{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        gap:5px
+    }
+    
+    .aboutus .flux_intro .about_flux{
+        height:500px;
+        width:400px;
+        text-align: justify;
+    }
+    
+    .aboutus .flux_intro .office_img img{
+        height:300px;
+        width:300px
+    }
+    
+    
+    .aboutus .mission{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+    }
+    
+    .aboutus .mission .mission_image img{
+        height:300px;
+        width:300px;
+    
+    }
+    
+    
+    .aboutus .our_mission{
+        height:200px;
+        width:400px;
+        text-align: justify;
+    }
+   
+    
+} 

@@ -1,7 +1,7 @@
 h1,h4{
     text-align: center;
     font-size: 1.2em;
-    margin-top: 13px;
+    margin-top:5px;
 }
 
 .home_section{
@@ -18,7 +18,7 @@ h1,h4{
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    margin:20px;
+    margin:10px;
 }
 .news{
 text-align: justify;
