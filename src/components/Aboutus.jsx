@@ -6,7 +6,7 @@ import axios from "axios";
 import {ToastContainer,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from "react-router-dom";
-function Aboutus() {
+function Aboutus(){
   const navigate = useNavigate();
   const [subscribe,setSubscribe] = useState({useremail:""});
 

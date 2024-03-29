@@ -1,1 +1,1 @@
-https://fluxs.netlify.app/
+https://fluxss.netlify.app
