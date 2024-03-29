@@ -8,7 +8,6 @@ const Blog = ({theme}) => {
   const [loading,setLoading] = useState(true)
   const getUserBlog = async ()=>{
     const response = await axios.get("https://fluxs.onrender.com/blog");
-    console.log(response.data);
    setBlog(response.data.data);
    setLoading(false);
   }
