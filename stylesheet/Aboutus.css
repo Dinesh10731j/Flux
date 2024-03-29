@@ -94,7 +94,7 @@
     .aboutus{
         display: flex;
         flex-direction:column;
-        padding:6px 10px;
+        padding:6px 5px;
         width:100%;
         gap:50px;
     }
@@ -134,7 +134,7 @@
     
     .aboutus .our_mission{
         height:200px;
-        width:400px;
+        width:300px;
         text-align: justify;
     }
    
