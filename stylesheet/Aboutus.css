@@ -109,13 +109,14 @@
     
     .aboutus .flux_intro .about_flux{
         height:700px;
-        width:300px;
+        width:360px;
         text-align: justify;
+        line-height:1.24em;
     }
     
     .aboutus .flux_intro .office_img img{
         height:300px;
-        width:300px
+        width:320px
     }
     
     
