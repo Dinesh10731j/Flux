@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../../stylesheet/Blog.css";
+import ClipLoader from "react-spinners/ClipLoader"
 
-const Blog = () => {
+const Blog = ({theme}) => {
   const [blog,setBlog] = useState([]);
+  const [loading,setLoading] = useState(true)
   const getUserBlog = async ()=>{
     const response = await axios.get("https://fluxs.onrender.com/blog");
     console.log(response.data);
    setBlog(response.data.data);
+   setLoading(false);
   }
 
   useEffect(()=>{
 getUserBlog();
   },[])
   return (
-    <div className='userblogs'>
+    <div>
     {
-      blog.map((blogs,index)=>(
+loading?(<div className='spinner'>
+<ClipLoader color={"#36D7B7"} loading={loading} size={60}
+aria-label="Loading....."
+        data-testid="loader"
+ />
+
+</div>):
+ blog.map((blogs,index)=>(
         <div className='cards'>
           <h1>{`Title:${blogs.title}`}</h1>
           <h2>{`Category:${blogs.categories}`}</h2>

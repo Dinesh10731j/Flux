@@ -2,7 +2,8 @@ import React, { useEffect, useState, } from 'react';
 import "../../stylesheet/Getstarted.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
-
+import {ToastContainer,toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Getstarted = () => {
@@ -13,8 +14,16 @@ const Getstarted = () => {
     const handleBlog = async ()=>{
         try{
            const response =  await axios.post("https://fluxs.onrender.com/getstarted",blog);
-           console.log(response);
-                  navigate("/blog");
+         if(!response){
+            toast.error(response.data.msg)
+         }else{
+            setTimeout(()=>{
+                navigate("/blog");
+            },1000);
+
+            toast.success('Blog posted successfully',);
+         }
+
         }catch(err){
             console.log('Eror while blog post',err)
         }
@@ -46,6 +55,7 @@ const Getstarted = () => {
   return (
    <>
    <section className='getstarted'>
+   <ToastContainer/>
    <form onSubmit={handleSubmit}>
     <section className='blogtitle'>
     
@@ -65,6 +75,7 @@ const Getstarted = () => {
         <option value="fashion">Fashion</option>
         <option value="healthFitness">Health & Fitness</option>
         <option value="Nature">Nature</option>
+        <option value="profile">Profile</option>
 </select>
     </section>
 

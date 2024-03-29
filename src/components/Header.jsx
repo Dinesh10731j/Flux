@@ -3,9 +3,9 @@ import "../../stylesheet/Header.css";
 import { Link } from 'react-router-dom';
 import Menu from "../assets/menu.png";
 import Moon from "../assets/moon.png";
-import Sun from "../assets/sunny.png"
+import Sun from "../assets/sunny.png";
 const Header = ({handleTheme,theme}) => {
-  const [isOpen,setOpen] = useState(true)
+  const [isOpen,setOpen] = useState(true);
 
   const handleMenu = ()=>{
     setOpen(!isOpen);
@@ -33,7 +33,6 @@ const Header = ({handleTheme,theme}) => {
               <Link  className= {theme?"whiteColor":"blackColor"} to="/features">Features</Link>
               <Link  className= {theme?"whiteColor":"blackColor"} to="/aboutus">About us</Link>
               <Link  className= {theme?"whiteColor":"blackColor"} to="/blog">Blog</Link>
-          
 
             </ul>
         </nav>:null

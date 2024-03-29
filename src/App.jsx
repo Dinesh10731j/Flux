@@ -18,11 +18,11 @@ const handleTheme = ()=>{
    <>
    <Router>
    <div className={theme?"darkmode":"lightmode"}>
-   <Header handleTheme={handleTheme}  theme={theme}/>
+   <Header handleTheme={handleTheme} theme={theme}/>
     <Routes>
     <Route path='/' Component={Home}/>
       <Route path='/aboutus' Component={Aboutus}/>
-      <Route path='/blog' Component={Blog}/>
+      <Route path='/blog' Component={Blog} theme={theme}/>
       <Route path='/getstarted' Component={Getstarted}/>
       <Route path='/features' Component={Features}/>
 
