@@ -66,7 +66,7 @@ const Getstarted = () => {
     <section className='blogcategory'>
     <h1>Select blog category</h1>
     <select id="categories" name='categories' onChange={handleChange} required={true}>
-        <option value="Finance">Finance</option>
+        <option value="Finance" selected>Finance</option>
         <option value="Photography">Photography</option>
         <option value="Beauty & Makeup">Beauty & Makeup</option>
         <option value="technology">Technology</option>
