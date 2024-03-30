@@ -73,7 +73,7 @@ function News() {
               <section className='inbox'>
                 <h1>Courtside in our inbox</h1>
                 <p>Get beyond UI blog posts delivered to your email inbox every week</p>
-                <Link to="/subscribe"><button>Subscribe</button></Link>
+                <Link to="/aboutus"><button>Subscribe</button></Link>
               </section>
               <section className='items'>
                 <h2>Categories</h2>
