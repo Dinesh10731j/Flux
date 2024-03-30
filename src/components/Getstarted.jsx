@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Getstarted = () => {
     const navigate = useNavigate();
-    const [blog,setBlog] = useState({});
+    const [blog,setBlog] = useState({categories:"Finance"});
     
 
     const handleBlog = async ()=>{
@@ -66,16 +66,16 @@ const Getstarted = () => {
     <section className='blogcategory'>
     <h1>Select blog category</h1>
     <select id="categories" name='categories' onChange={handleChange} required={true}>
-        <option value="Finance" selected>Finance</option>
+        <option value="Finance">Finance</option>
         <option value="Photography">Photography</option>
         <option value="Beauty & Makeup">Beauty & Makeup</option>
-        <option value="technology">Technology</option>
-        <option value="travel">Travel</option>
-        <option value="food">Food</option>
-        <option value="fashion">Fashion</option>
-        <option value="healthFitness">Health & Fitness</option>
+        <option value="Technology">Technology</option>
+        <option value="Travel">Travel</option>
+        <option value="Food">Food</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Health & Fitness">Health & Fitness</option>
         <option value="Nature">Nature</option>
-        <option value="profile">Profile</option>
+        <option value="Profile">Profile</option>
 </select>
     </section>
 
