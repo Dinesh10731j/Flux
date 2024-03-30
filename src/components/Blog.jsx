@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../../stylesheet/Blog.css";
-import ClipLoader from "react-spinners/ClipLoader"
+import ClipLoader from "react-spinners/ClipLoader";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Blog = ({theme}) => {
   const [blog,setBlog] = useState([]);
@@ -27,8 +29,8 @@ aria-label="Loading....."
 </div>):
  blog.map((blogs,index)=>(
         <div className='cards'>
-          <h1>{`Title:${blogs.title}`}</h1>
-          <h2>{`Category:${blogs.categories}`}</h2>
+          <h1>{`Title:${blogs.title}`||<Skeleton/>}</h1>
+          <h2>{`Category:${blogs.categories}`||<Skeleton/>}</h2>
           <p>{`Blog:${blogs.blog}`}</p>
           <p>{`Author:${blogs.author}`}</p>
 
