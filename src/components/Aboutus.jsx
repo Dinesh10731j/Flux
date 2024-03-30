@@ -63,7 +63,7 @@ function Aboutus() {
             <div className="flux_intro">
               <div className="about_flux">
                 <h1><Skeleton height={30} baseColor="#636e72"/></h1>
-                <p><Skeleton count={5}  baseColor="#636e72" /></p>
+                <p><Skeleton count={5} height={500} width={700} baseColor="#636e72" /></p>
               </div>
 
               <div className="office_img">
