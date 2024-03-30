@@ -3,7 +3,9 @@ import axios from 'axios';
 import "../../stylesheet/Blog.css";
 import ClipLoader from "react-spinners/ClipLoader";
 import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
+import AOS from "aos";
+import "aos/dist/aos.css"
 
 const Blog = ({theme}) => {
   const [blog,setBlog] = useState([]);
@@ -15,6 +17,7 @@ const Blog = ({theme}) => {
   }
 
   useEffect(()=>{
+    AOS.init({duration:2000});
 getUserBlog();
   },[])
   return (
@@ -28,7 +31,7 @@ aria-label="Loading....."
 
 </div>):
  blog.map((blogs,index)=>(
-        <div className='cards'>
+        <div className='cards' data-aos="fade-zoom-in" key={index}>
           <h1>{`Title:${blogs.title}`||<Skeleton/>}</h1>
           <h2>{`Category:${blogs.categories}`||<Skeleton/>}</h2>
           <p>{`Blog:${blogs.blog}`}</p>
