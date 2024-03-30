@@ -31,7 +31,7 @@ aria-label="Loading....."
 
 </div>):
  blog.map((blogs,index)=>(
-        <div className='cards' data-aos="fade-zoom-in" key={index}>
+        <div className='cards' data-aos="fade-zoom-in" key={blogs.title}>
           <h1>{`Title:${blogs.title}`||<Skeleton/>}</h1>
           <h2>{`Category:${blogs.categories}`||<Skeleton/>}</h2>
           <p>{`Blog:${blogs.blog}`}</p>
