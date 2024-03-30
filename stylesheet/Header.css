@@ -133,7 +133,7 @@ header .menu_icon img{
     position:fixed;
     background-color:#353b48;
     right:0px;
-    width:100%;
+top:59px;
     text-align: center;
     display: flex;
     flex-direction: column;
