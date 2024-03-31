@@ -5,6 +5,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "react-scroll-to-top";
 import "../../stylesheet/Blog.css";
 
 const Blog = ({ theme }) => {
@@ -24,7 +25,7 @@ const Blog = ({ theme }) => {
   }
 
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration:2000 });
     getUserBlog();
 
     const timer = setTimeout(() => {
@@ -36,6 +37,7 @@ const Blog = ({ theme }) => {
 
   return (
     <div>
+     <ScrollToTop smooth color='#3498db' />
       {loading ? (
         <div className='spinner'>
           <ClipLoader color={"#36D7B7"} loading={loading} size={60} aria-label="Loading....." data-testid="loader" />
