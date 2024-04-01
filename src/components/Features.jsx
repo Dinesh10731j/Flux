@@ -24,7 +24,7 @@ const Features = () => {
   return (
     <div className='features'>
       <div className='service' data-aos="fade-zoom-in">
-        {loading ? <Skeleton height={200} baseColor='#636e72' /> : <img src={Socialmedia} alt='service' />}
+        {loading ? <Skeleton  baseColor='#636e72' /> : <img src={Socialmedia} alt='service' />}
         <h1>{loading ? <Skeleton  baseColor='#636e72'/> : 'Communication'}</h1>
         <p>
           {loading ? <Skeleton count={5}  baseColor='#636e72'/> :
@@ -39,7 +39,7 @@ const Features = () => {
         </p>
       </div>
       <div className='customer-review' data-aos="fade-zoom-in">
-        {loading ? <Skeleton height={200} count={5} baseColor='#636e72'/> : <img src={customerReview} alt='review' />}
+        {loading ? <Skeleton  count={5} baseColor='#636e72'/> : <img src={customerReview} alt='review' />}
         <h1>{loading ? <Skeleton baseColor='#636e72' /> : 'Customer Review'}</h1>
         <p>
           {loading ? <Skeleton count={5}  baseColor='#636e72'/> :
@@ -55,7 +55,7 @@ const Features = () => {
         </p>
       </div>
       <div className='support' data-aos="fade-zoom-in">
-        {loading ? <Skeleton height={200}  baseColor='#636e72'/> : <img src={CustomerSupport} alt='support' />}
+        {loading ? <Skeleton   baseColor='#636e72'/> : <img src={CustomerSupport} alt='support' />}
         <h1>{loading ? <Skeleton /> : 'Customer Service'}</h1>
         <p>
           {loading ? <Skeleton count={5}  baseColor='#636e72'/> :
