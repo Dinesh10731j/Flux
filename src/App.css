@@ -13,7 +13,7 @@
   color: white;
   height:auto;
   width: 100%;
-  transition: all 0.4s;
+  transition:all 0.4s;
 }
 
 
@@ -21,7 +21,7 @@
   background-color:white;
   color: black;
   height:auto;
-  width: 100%;
+  width:100%;
   transition: all 0.4s;
 }
 

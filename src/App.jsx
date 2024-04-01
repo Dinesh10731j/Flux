@@ -20,11 +20,11 @@ const handleTheme = ()=>{
    <div className={theme?"darkmode":"lightmode"}>
    <Header handleTheme={handleTheme} theme={theme}/>
     <Routes>
-    <Route path='/' Component={Home}/>
-      <Route path='/aboutus' Component={Aboutus}/>
-      <Route path='/blog' Component={Blog} theme={theme}/>
-      <Route path='/getstarted' Component={Getstarted}/>
-      <Route path='/features' Component={Features}/>
+    <Route path='/' element={<Home/>}/>
+      <Route path='/aboutus' element={<Aboutus/>}/>
+      <Route path='/blog' element={<Blog/>}/>
+      <Route path='/getstarted' element={<Getstarted/>}/>
+      <Route path='/features' element={<Features/>}/>
 
       
     </Routes>

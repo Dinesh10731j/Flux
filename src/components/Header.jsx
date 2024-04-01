@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../stylesheet/Header.css";
 import { Link } from 'react-router-dom';
 import Menu from "../assets/menu.png";
@@ -10,9 +10,11 @@ const Header = ({handleTheme,theme}) => {
   const handleMenu = ()=>{
     setOpen(!isOpen);
   }
+
+
   return (
     <>
-       <header>
+       <header  >
         <section className='logo'>
         <div className='logo-item'>
         <div className='fluxlogo'>
@@ -27,7 +29,7 @@ const Header = ({handleTheme,theme}) => {
 
         </section>
         {
-          isOpen? <nav>
+          isOpen? <nav >
             <ul>
             <Link  className= {theme?"whiteColor":"blackColor"} to="/">Home</Link>
               <Link  className= {theme?"whiteColor":"blackColor"} to="/features">Features</Link>
