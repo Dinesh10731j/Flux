@@ -109,6 +109,7 @@ text-align: justify;
     .news h1,p{
         margin-top:10px;
         font-size: 0.90em;
+        
     }
     
     .inbox{
@@ -120,6 +121,8 @@ text-align: justify;
         border-radius: 20px;
         padding:5px 5px;
         margin-left:20px;
+        align-items: center;
+      
     }
     
     .inbox h1{
@@ -135,19 +138,31 @@ text-align: justify;
         cursor: pointer;
     }
     
-    
+    .items{
+        text-align: center;
+    }
     .items ul li{
         list-style: none;
         font-weight: bold;
-        align-items: center;
+        align-items:center;
         margin: 10px 70px;
       
+    }
+
+    .items h1{
+        text-align: center;
+        font-size: 1.4em;
     }
     
     .populartags{
         display: flex;
         flex-direction:column;
         flex-wrap: wrap;
+      }
+
+
+      .populartags h1{
+    font-size: 1.4em;
       }
 
     

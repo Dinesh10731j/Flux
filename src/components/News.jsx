@@ -76,7 +76,7 @@ function News() {
                 <Link to="/aboutus"><button>Subscribe</button></Link>
               </section>
               <section className='items'>
-                <h2>Categories</h2>
+                <h1>Categories</h1>
                 <ul>
                   <li>Designs</li>
                   <li>Meetups</li>
