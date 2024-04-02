@@ -6,6 +6,7 @@ import CustomerSupport from "../assets/support.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "react-scroll-to-top";
+import {TypeAnimation} from "react-type-animation"
 
 const Features = () => {
 
@@ -21,7 +22,17 @@ const Features = () => {
        
          
             <img src={Socialmedia} alt='service' />
-            <h1>Communication</h1>
+            <TypeAnimation  sequence={[
+              
+              "Communication",
+              1000,
+            
+             
+             ]}
+ 
+               repeat={Infinity}
+               style={{fontSize:"1.2em",marginTop:"4px"}}
+             />
             <p>
               Welcome to the Communication Section of our blog, your gateway to staying
               connected and informed. Here, we explore the latest trends, insights, and best
@@ -38,7 +49,17 @@ const Features = () => {
       <div className='customer-review' data-aos="fade-zoom-in">
        
             <img src={customerReview} alt='review' />
-            <h1>Customer Review</h1>
+            <TypeAnimation  sequence={[
+              
+             "Customer Review",
+             1000,
+            
+            
+            ]}
+
+              repeat={Infinity}
+              style={{fontSize:"1.2em",marginTop:"4px"}}
+            />
             <p>
               Welcome to our blog's customer review section, where imagination meets
               insight! Dive into a world where fictional characters share their thoughts
@@ -55,7 +76,16 @@ const Features = () => {
       <div className='support' data-aos="fade-zoom-in">
         
             <img src={CustomerSupport} alt='support' />
-            <h1>Customer Service</h1>
+            <TypeAnimation  sequence={[
+              1000,
+              "Customer Service",
+              100,
+            
+             ]}
+ 
+               repeat={Infinity}
+               style={{fontSize:"1.2em",marginTop:"4px"}}
+             />
             <p>
               Introducing the customer service hub of our blog app – your one-stop destination
               for seamless support and personalized assistance! We understand the importance of
