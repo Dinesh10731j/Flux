@@ -79,11 +79,11 @@ const Features = () => {
             <TypeAnimation  sequence={[
               1000,
               "Customer Service",
-              100,
+            
             
              ]}
  
-               repeat={Infinity}
+              
                style={{fontSize:"1.2em",marginTop:"4px"}}
              />
             <p>
