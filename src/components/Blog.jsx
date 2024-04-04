@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import ScrollToTop from "react-scroll-to-top";
 import "../../stylesheet/Blog.css";
 
-const Blog = ({ theme }) => {
+const Blog = () => {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
   const [skeleton, setSkeleton] = useState(true);
