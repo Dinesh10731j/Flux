@@ -28,7 +28,7 @@ const Header = ({ handleTheme, theme }) => {
         {isOpen ? (
           <nav>
             <ul>
-              <Link
+           <li><Link
                 className={theme ? "whiteColor" : "blackColor"}
                 to="/"
                 style={{
@@ -36,8 +36,8 @@ const Header = ({ handleTheme, theme }) => {
                 }}
               >
                 Home
-              </Link>
-              <Link
+              </Link></li>   
+            <li> <Link
                 className={theme ? "whiteColor" : "blackColor"}
                 to="/features"
                 style={{
@@ -46,8 +46,8 @@ const Header = ({ handleTheme, theme }) => {
                 }}
               >
                 Features
-              </Link>
-              <Link
+              </Link></li> 
+             <li> <Link
                 className={theme ? "whiteColor" : "blackColor"}
                 to="/aboutus"
                 style={{
@@ -56,8 +56,8 @@ const Header = ({ handleTheme, theme }) => {
                 }}
               >
                 About us
-              </Link>
-              <Link
+              </Link></li>
+             <li><Link
                 className={theme ? "whiteColor" : "blackColor"}
                 to="/blog"
                 style={{
@@ -65,7 +65,7 @@ const Header = ({ handleTheme, theme }) => {
                 }}
               >
                 Blog
-              </Link>
+              </Link></li> 
             </ul>
           </nav>
         ) : null}

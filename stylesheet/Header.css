@@ -9,7 +9,10 @@
     border-radius: 12px;
   }
 
-
+header nav ul li{
+  list-style: none;
+  display: inline-block;
+}
   header .theme_changer img{
     height:40px;
     width:40px;
@@ -124,8 +127,9 @@ header .menu_icon img{
       border-radius: 50%;
     }
   
-    
-
+header nav ul li{
+  padding: 10px 18px;
+}
 
     header nav ul{
      border-radius: 12px;
@@ -134,12 +138,14 @@ header .menu_icon img{
     background-color:#353b48;
     right:0px;
     z-index: 555;
-top:59px;
+    top:59px;
     text-align: center;
     display: flex;
     flex-direction: column;
     top:60px;
     transition: all 1s;
+    height:200px;
+    width:200px;
 
 
     }
