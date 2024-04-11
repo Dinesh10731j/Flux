@@ -25,7 +25,7 @@ const Header = ({ handleTheme, theme }) => {
           </div>
         </section>
 
-        {isOpen ? (
+        {isOpen && 
           <nav>
             <ul>
            <li><Link
@@ -68,7 +68,7 @@ const Header = ({ handleTheme, theme }) => {
               </Link></li> 
             </ul>
           </nav>
-        ) : null}
+         }
 
         <section className="signupBtn">
           <Link to="/getstarted">
