@@ -9,7 +9,7 @@ import Features from './components/Features';
 import "./App.css";
 const App = () => {
 
-  const [theme,setTheme] = useState(true);
+  const [theme,setTheme] = useState(false);
 
 const handleTheme = ()=>{
   setTheme(!theme);
