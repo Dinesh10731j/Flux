@@ -11,8 +11,8 @@ import Admin from './components/Admin';
 const App = () => {
 
   const [theme,setTheme] = useState(false);
-  const [admin,setAdmin] = useState(false);
-  console.log(admin)
+  const [admin,setAdmin] = useState();
+
 
 const handleTheme = ()=>{
   setTheme(!theme);
@@ -20,8 +20,6 @@ const handleTheme = ()=>{
 
 const CheckisAdmin = (isAdmin)=>{
   setAdmin(isAdmin);
-  console.log(typeof(isAdmin))
-
 }
 
   return (
