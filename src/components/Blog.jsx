@@ -3,24 +3,32 @@ import axios from 'axios';
 import ClipLoader from "react-spinners/ClipLoader";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import AOS from "aos";
-import "aos/dist/aos.css";
 import ScrollToTop from "react-scroll-to-top";
 import "../../stylesheet/Blog.css";
 import { useQuery } from 'react-query';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const getUserBlog = async () => {
-    const response = await axios.get("https://fluxs.onrender.com/blog");
-    return response.data.data;
+  const response = await axios.get("https://fluxs.onrender.com/blog");
+  return response.data.data;
 }
 
-const Blog = () => {
+const Blog = ({ CheckisAdmin }) => {
   const { isLoading, error, data: blogs } = useQuery('blogs', getUserBlog);
   const [skeleton, setSkeleton] = useState(true);
 
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 2000 }); // Initialize AOS with desired options
+  }, []);
 
+  useEffect(() => {
+    if (blogs) {
+      CheckisAdmin(blogs); // Call CheckisAdmin with blogs data
+    }
+  }, [blogs,CheckisAdmin]);
+
+  useEffect(() => {
     if (!isLoading) {
       const timer = setTimeout(() => {
         setSkeleton(false);

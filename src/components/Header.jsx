@@ -5,9 +5,9 @@ import Menu from "../assets/menu.png";
 import Moon from "../assets/moon.png";
 import Sun from "../assets/sunny.png";
 
-const Header = ({ handleTheme, theme }) => {
+const Header = ({ handleTheme, theme,admin }) => {
   const [isOpen, setOpen] = useState(true);
-  const location = useLocation(); // Get current URL location
+  const location = useLocation();// Get current URL location
 
   const handleMenu = () => {
     setOpen(!isOpen);
@@ -57,6 +57,23 @@ const Header = ({ handleTheme, theme }) => {
               >
                 About us
               </Link></li>
+              {
+                admin?(
+                  <li><Link
+                className={theme ? "whiteColor" : "blackColor"}
+                to="/admin"
+                style={{
+                  color: location.pathname === "/admin" ? "#7ed6df" : "inherit",
+                }}
+              >
+                Admin
+              </Link></li> 
+                ):""
+               
+
+              }
+             
+
              <li><Link
                 className={theme ? "whiteColor" : "blackColor"}
                 to="/blog"
