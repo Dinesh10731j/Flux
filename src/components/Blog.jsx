@@ -7,59 +7,60 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "react-scroll-to-top";
 import "../../stylesheet/Blog.css";
+import { useQuery } from 'react-query';
+
+const getUserBlog = async () => {
+    const response = await axios.get("https://fluxs.onrender.com/blog");
+    return response.data.data;
+}
 
 const Blog = () => {
-  const [blog, setBlog] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { isLoading, error, data: blogs } = useQuery('blogs', getUserBlog);
   const [skeleton, setSkeleton] = useState(true);
 
-  const getUserBlog = async () => {
-    try {
-      const response = await axios.get("https://fluxs.onrender.com/blog");
-      setBlog(response.data.data);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching blog data:", error);
-      setLoading(false); // Set loading to false in case of an error
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+
+    if (!isLoading) {
+      const timer = setTimeout(() => {
+        setSkeleton(false);
+      }, 1500);
+
+      return () => clearTimeout(timer);
     }
+  }, [isLoading]);
+
+  if (isLoading) {
+    return (
+      <div className='spinner'>
+        <ClipLoader color={"#36D7B7"} loading={isLoading} size={60} aria-label="Loading....." data-testid="loader" />
+      </div>
+    );
   }
 
-  useEffect(() => {
-    AOS.init({ duration:2000 });
-    getUserBlog();
-
-    const timer = setTimeout(() => {
-      setSkeleton(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [])
+  if (error) {
+    return <div>Error loading data</div>;
+  }
 
   return (
     <div>
-     <ScrollToTop smooth color='#3498db' />
-      {loading ? (
-        <div className='spinner'>
-          <ClipLoader color={"#36D7B7"} loading={loading} size={60} aria-label="Loading....." data-testid="loader" />
+      <ScrollToTop smooth color='#3498db' />
+      {blogs.map((blog, index) => (
+        <div className='cards' data-aos="fade-zoom-in" key={blog.title}>
+          {skeleton ? (
+            <Skeleton count={5} baseColor='#636e72'/>
+          ) : (
+            <>
+              <h1>{`Title: ${blog.title}`}</h1>
+              <h2>{`Category: ${blog.categories}`}</h2>
+              <p>{`Blog: ${blog.blog}`}</p>
+              <p>{`Author: ${blog.author}`}</p>
+            </>
+          )}
         </div>
-      ) : (
-        blog.map((blogs, index) => (
-          <div className='cards' data-aos="fade-zoom-in" key={blogs.title}>
-            {skeleton ? (
-              <Skeleton count={5} baseColor='#636e72'/>
-            ) : (
-              <>
-                <h1>{`Title:${blogs.title}`}</h1>
-                <h2>{`Category:${blogs.categories}`}</h2>
-                <p>{`Blog:${blogs.blog}`}</p>
-                <p>{`Author:${blogs.author}`}</p>
-              </>
-            )}
-          </div>
-        ))
-      )}
+      ))}
     </div>
-  )
+  );
 }
 
 export default Blog;
