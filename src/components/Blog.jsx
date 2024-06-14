@@ -26,7 +26,7 @@ const Blog = ({ CheckisAdmin }) => {
     if (blogs) {
       CheckisAdmin(blogs); // Call CheckisAdmin with blogs data
     }
-  }, [blogs,CheckisAdmin]);
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
