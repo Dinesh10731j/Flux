@@ -24,6 +24,7 @@ const Getstarted = () => {
 
   const mutation = useMutation(postBlog, {
     onSuccess: () => {
+
       toast.success('Blog posted successfully');
       setTimeout(() => {
         navigate("/blog");

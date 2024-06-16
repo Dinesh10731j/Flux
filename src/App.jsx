@@ -34,7 +34,7 @@ const CheckisAdmin = (isAdmin)=>{
       <Route path='/blog' element={<Blog CheckisAdmin={CheckisAdmin}/>}/>
       <Route path='/getstarted' element={<Getstarted/>}/>
       <Route path='/features' element={<Features/>}/>
-      <Route path='/admin' element={admin?<Admin/>:<Error/>}/>
+      <Route path='/admin' element={admin?<Admin/>:<Home/>}/>
 
       
     </Routes>
