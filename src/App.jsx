@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Features from './components/Features';
 import "./App.css";
 import Admin from './components/Admin';
+import Error from './components/Error';
 const App = () => {
 
   const [theme,setTheme] = useState(false);
@@ -33,7 +34,7 @@ const CheckisAdmin = (isAdmin)=>{
       <Route path='/blog' element={<Blog CheckisAdmin={CheckisAdmin}/>}/>
       <Route path='/getstarted' element={<Getstarted/>}/>
       <Route path='/features' element={<Features/>}/>
-      <Route path='/admin' element={admin?<Admin/>:<Home/>}/>
+      <Route path='/admin' element={admin?<Admin/>:<Error/>}/>
 
       
     </Routes>
