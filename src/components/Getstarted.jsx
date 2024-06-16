@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { useMutation } from 'react-query';
 
 const postBlog = async (blog) => {
+  
+
   const response = await axios.post("https://fluxs.onrender.com/getstarted", blog);
   return response.data;
 };
