@@ -23,8 +23,8 @@ const Getstarted = () => {
   });
 
   const mutation = useMutation(postBlog, {
-    onSuccess: () => {
-
+    onSuccess: (data) => {
+console.log(data)
       toast.success('Blog posted successfully');
       setTimeout(() => {
         navigate("/blog");
@@ -36,6 +36,7 @@ const Getstarted = () => {
   });
 
   const onSubmit = (data) => {
+    console.log(data)
     mutation.mutate(data);
   };
 
