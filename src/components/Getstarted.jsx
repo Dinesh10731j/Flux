@@ -29,9 +29,8 @@ const Getstarted = () => {
 
   const mutation = useMutation(postBlog, {
     onSuccess: (data) => {
-      console.log(data);
+     
 
-      // Save the token to localStorage
       localStorage.setItem('token', data.token);
 
       toast.success('Blog posted successfully');
@@ -46,7 +45,7 @@ const Getstarted = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+
     mutation.mutate(data);
   };
 
