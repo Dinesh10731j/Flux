@@ -8,9 +8,14 @@ import { useForm } from "react-hook-form";
 import { useMutation } from 'react-query';
 
 const postBlog = async (blog) => {
-  
+  const token = localStorage.getItem('token'); // Get the token from localStorage
 
-  const response = await axios.post("https://fluxs.onrender.com/getstarted", blog);
+  const response = await axios.post("https://fluxs.onrender.com/getstarted", blog, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
   return response.data;
 };
 
@@ -24,19 +29,24 @@ const Getstarted = () => {
 
   const mutation = useMutation(postBlog, {
     onSuccess: (data) => {
-console.log(data)
+      console.log(data);
+
+      // Save the token to localStorage
+      localStorage.setItem('token', data.token);
+
       toast.success('Blog posted successfully');
       setTimeout(() => {
         navigate("/blog");
       }, 1000);
     },
-    onError: () => {
+    onError: (error) => {
+      console.error('Error while posting blog:', error);
       toast.error('Error while posting blog');
     }
   });
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     mutation.mutate(data);
   };
 
@@ -52,7 +62,7 @@ console.log(data)
               placeholder='Enter blog title'
               {...register('title', { required: true })}
             />
-            {errors.title && <h4 style={{color:'tomato'}}>This field is required</h4>}
+            {errors.title && <h4 style={{ color: 'tomato' }}>This field is required</h4>}
           </section>
           <section className='blogcategory'>
             <h1>Select blog category</h1>
@@ -68,7 +78,7 @@ console.log(data)
               <option value="Nature">Nature</option>
               <option value="Profile">Profile</option>
             </select>
-            {errors.categories && <h4 style={{color:'tomato'}}>This field is required</h4>}
+            {errors.categories && <h4 style={{ color: 'tomato' }}>This field is required</h4>}
           </section>
           <section className='writeblog'>
             <h1>Write Blog</h1>
@@ -76,7 +86,7 @@ console.log(data)
               placeholder='Write blog....'
               {...register('blog', { required: true })}
             />
-            {errors.blog && <h4 style={{color:'tomato'}}>This field is required</h4>}
+            {errors.blog && <h4 style={{ color: 'tomato' }}>This field is required</h4>}
           </section>
           <section className='authorname'>
             <h1>Author</h1>
@@ -85,7 +95,7 @@ console.log(data)
               placeholder='Enter author name'
               {...register('author', { required: true })}
             />
-            {errors.author && <h4 style={{color:'tomato'}}>This field is required</h4>}
+            {errors.author && <h4 style={{ color: 'tomato' }}>This field is required</h4>}
           </section>
           <section className='submit-btn'>
             <input type='submit' value="Submit" />
