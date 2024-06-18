@@ -40,7 +40,7 @@ const Getstarted = () => {
       }, 1000);
     },
     onError: (error) => {
-      console.error('Error while posting blog:', error);
+  
       toast.error('Error while posting blog');
     }
   });
