@@ -11,6 +11,7 @@ import 'aos/dist/aos.css';
 
 const getUserBlog = async () => {
   const token = localStorage.getItem('token');
+  console.log(token)
  
   
     const response = await axios.get("https://fluxs.onrender.com/blog",{
