@@ -9,7 +9,6 @@ import { useMutation } from 'react-query';
 
 const postBlog = async (blog) => {
   const token = localStorage.getItem('token'); // Get the token from localStorage
-  console.log(token)
 
   const response = await axios.post("https://fluxs.onrender.com/getstarted", blog, {
     headers: {
