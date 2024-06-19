@@ -11,24 +11,18 @@ import 'aos/dist/aos.css';
 
 const getUserBlog = async () => {
   const token = localStorage.getItem('token');
-  console.log(token)
- 
-  
-    const response = await axios.get("https://fluxs.onrender.com/blog",{
-      headers:{
-        Authorization:`Bearer ${token}`,
-        "Content-Type":"application/json"
-      }
-    });
-    return response.data.data;
-  }
- 
-
+  const response = await axios.get("https://fluxs.onrender.com/blog", {
+    headers:{
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
+  return response.data.data;
+};
 
 const Blog = ({ CheckisAdmin }) => {
   const { isLoading, error, data: blogs } = useQuery('blogs', getUserBlog);
   const [skeleton, setSkeleton] = useState(true);
-  localStorage.setItem('token', data.token);
 
   useEffect(() => {
     AOS.init({ duration: 2000 }); // Initialize AOS with desired options
@@ -38,17 +32,19 @@ const Blog = ({ CheckisAdmin }) => {
     if (blogs) {
       CheckisAdmin(blogs); // Call CheckisAdmin with blogs data
     }
-  }, []);
+  }, [blogs, CheckisAdmin]);
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!isLoading && blogs) {
+      // Assuming data.token is available in the first blog entry
+      localStorage.setItem('token', blogs[0].token); // Set token to localStorage
       const timer = setTimeout(() => {
         setSkeleton(false);
       }, 1500);
 
       return () => clearTimeout(timer);
     }
-  }, [isLoading]);
+  }, [isLoading, blogs]);
 
   if (isLoading) {
     return (
@@ -59,7 +55,7 @@ const Blog = ({ CheckisAdmin }) => {
   }
 
   if (error) {
-    return <div >Error loading data</div>;
+    return <div>Error loading data</div>;
   }
 
   return (
