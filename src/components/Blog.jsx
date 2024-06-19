@@ -11,12 +11,18 @@ import 'aos/dist/aos.css';
 
 const getUserBlog = async () => {
   const token = localStorage.getItem('token');
-  if(token){
-    const response = await axios.get("https://fluxs.onrender.com/blog");
+ 
+  
+    const response = await axios.get("https://fluxs.onrender.com/blog",{
+      headers:{
+        Authorization:`Bearer ${token}`,
+        "Content-Type":"application/json"
+      }
+    });
     return response.data.data;
   }
  
-}
+
 
 const Blog = ({ CheckisAdmin }) => {
   const { isLoading, error, data: blogs } = useQuery('blogs', getUserBlog);
