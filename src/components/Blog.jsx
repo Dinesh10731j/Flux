@@ -28,7 +28,7 @@ const getUserBlog = async () => {
 const Blog = ({ CheckisAdmin }) => {
   const { isLoading, error, data: blogs } = useQuery('blogs', getUserBlog);
   const [skeleton, setSkeleton] = useState(true);
-  localStorage.setItem('token', blogs.token);
+  localStorage.setItem('token', data.token);
 
   useEffect(() => {
     AOS.init({ duration: 2000 }); // Initialize AOS with desired options
