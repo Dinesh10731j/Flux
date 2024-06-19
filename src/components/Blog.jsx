@@ -10,8 +10,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const getUserBlog = async () => {
-  const response = await axios.get("https://fluxs.onrender.com/blog");
-  return response.data.data;
+  const token = localStorage.getItem('token');
+  if(token){
+    const response = await axios.get("https://fluxs.onrender.com/blog");
+    return response.data.data;
+  }
+ 
 }
 
 const Blog = ({ CheckisAdmin }) => {
