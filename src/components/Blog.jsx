@@ -57,7 +57,7 @@ const Blog = ({ CheckisAdmin }) => {
   }
 
   if (error) {
-    return <div>Error loading data</div>;
+    return <div >Error loading data</div>;
   }
 
   return (
